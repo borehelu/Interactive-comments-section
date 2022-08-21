@@ -9,6 +9,9 @@
 :root{
   font-size: 16px;
 
+  /* 
+- Mobile: 375px
+- Desktop: 1440px */
   
   /* primary */
   --moderate-blue: hsl(238, 40%, 52%);
@@ -27,6 +30,102 @@
 }
 
 body{
-  
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--very-light-gray);
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
 
+p{
+  line-height: 1.6;
+}
+
+main{
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.comment{
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 868px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+
+}
+
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.comment__score{
+  background-color: var(--very-light-gray);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  row-gap: 1rem;
+}
+
+
+.comment__score .score{
+  color: var(--moderate-blue);
+  font-weight: 700;
+}
+
+.comment__details{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.comment__heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment__heading .user_details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.comment__heading .user_details img{
+  max-width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+.comment__heading .user_name{
+  font-weight: 700;
+}
+
+.comment__heading .time, .comment__text{
+  color: var(--grayish-blue);
+}
+
+.reply_btn{
+  text-transform: capitalize;
+  color: var(--moderate-blue);
+  font-weight: 700;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+
+}
+
+.reply_btn:hover{
+  opacity: .4;
 }
