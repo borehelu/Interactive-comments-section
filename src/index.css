@@ -56,13 +56,14 @@ main{
   justify-content: center;
   align-items: center;
   column-gap: 2rem;
-
+  margin-bottom: 1rem;
 }
 
 button{
   background: none;
   border: none;
   cursor: pointer;
+  
 }
 
 .comment__score{
@@ -127,5 +128,39 @@ button{
 }
 
 .reply_btn:hover{
-  opacity: .4;
+  opacity: .6;
+}
+
+.new-comment{
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.new-comment img{
+  width: 40px;
+  height: auto;
+}
+
+.new-comment textarea{
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--grayish-blue);
+  padding: .8rem 1rem;
+}
+
+.new-comment button.primary{
+  background-color: var(--moderate-blue);
+  color: var(--white);
+  text-transform: uppercase;
+  padding: .7rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  
+}
+
+.new-comment button.primary:hover{
+  opacity: .6;
 }
