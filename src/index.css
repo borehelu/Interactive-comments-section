@@ -40,6 +40,7 @@ body{
 
 p{
   line-height: 1.6;
+  color: var(--dark-blue);
 }
 
 main{
@@ -163,4 +164,16 @@ button{
 
 .new-comment button.primary:hover{
   opacity: .6;
+}
+
+.replies_container{
+  width: 96%;
+  border-left: 1px solid var(--light-gray);
+  margin-left: auto;
+  padding-left: 2rem;
+}
+
+.comment__text span{
+  font-weight: 700;
+  color: var(--moderate-blue);
 }
