@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
-import NewComment from './NewComment';
+import NewReply from './NewReply';
 import Replies from './Replies';
 
-function Comment({comment,user}) {
+function Comment({comment, user, addReply}) {
     const [isVisible,setIsVisible] = useState(false);
   
 
@@ -53,7 +53,7 @@ function Comment({comment,user}) {
       </div>
     </div> 
     {
-      isVisible && <NewComment user = {user} replyingTo= {comment.user.username}/>
+      isVisible && <NewReply user = {user} replyingTo= {comment.user.username} commentId = {comment.id} addReply={addReply} setIsVisible={setIsVisible}/>
     }
 
     

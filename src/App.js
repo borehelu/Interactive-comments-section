@@ -15,11 +15,23 @@ function App() {
     setComments(newComments);
 
   }
+
+  function addReply(reply,commentId){
+    
+    let newComments = comments.map(comment => {
+      if(comment.id === commentId){ 
+        comment.replies = [...comment.replies, reply];
+      }
+      return comment;
+    });
+
+    setComments(newComments);
+  }
   
   return (
    <main>
-     <Comments comments={ comments } user={ user } /> 
-     <NewComment user={user} addComment={addComment}/>
+     <Comments comments={ comments } user={ user } addReply={ addReply } /> 
+     <NewComment user={ user } addComment={ addComment } />
     </main>
   );
 }
