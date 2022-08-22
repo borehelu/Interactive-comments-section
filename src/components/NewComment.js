@@ -1,14 +1,23 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-function NewComment({user,replyingTo}) {
-  const [comment, setComment] = useState(`@${replyingTo}`);
+function NewComment({user,addComment}) {
+  const [comment, setComment] = useState("");
+
+  const handleClick = () =>{
+    let id = uuidv4();
+    let date = new Date();
+    let newComment = {id:id,content:comment,createdAt:date.toDateString(),score:0,user:user};
+
+    addComment(newComment);
+  }
 
 
   return (
     <div className="comment new-comment">
       <img src={user.image.webp} alt="avatar" />
-      <textarea  rows="5" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
-      <button className="primary">reply</button>
+      <textarea placeholder='Add a comment...' rows="5" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
+      <button className="primary" onClick={ handleClick }>send</button>
     </div> 
   );
 }
