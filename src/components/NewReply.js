@@ -10,11 +10,15 @@ function NewReply({user,replyingTo,addReply,commentId,setIsVisible}) {
       let id = uuidv4();
       let date = new Date();
       let content = comment.replace(`@${replyingTo},`,'').trim();
-      let newReply = {id:id,content:content,createdAt:date.toDateString(),score:0,replyingTo: replyingTo, user:user};
-      
-      addReply(newReply,commentId);
 
-      setIsVisible(value => !value);
+      if(content.length > 0){
+        let newReply = {id:id,content:content,createdAt:date.toDateString(),score:0,replyingTo: replyingTo, user:user};
+      
+        addReply(newReply,commentId);
+  
+        setIsVisible(value => !value);
+      }
+     
       
     }
   
