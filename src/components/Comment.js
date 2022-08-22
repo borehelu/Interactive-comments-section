@@ -1,13 +1,17 @@
 import React,{useState} from 'react';
 import NewReply from './NewReply';
 import Replies from './Replies';
+import DeleteModal from './DeleteModal';
 
-function Comment({comment, user, addReply}) {
+
+function Comment({comment, user, addReply,removeComment}) {
     const [isVisible,setIsVisible] = useState(false);
+    const [showModal,setShowModal] = useState(false);
   
 
   return (
     <div>
+    <DeleteModal showModal={showModal} setShowModal={setShowModal} commentId={ comment.id} isReply={false} removeComment={ removeComment }/>
     <div className="comment" >
       <div className="comment__score">
         <button className="score__btn">
@@ -29,7 +33,7 @@ function Comment({comment, user, addReply}) {
           </div>
           { user.username === comment.user.username ? 
               <div className='flex'>
-                <button className="delete_btn btn"  onClick={()=> setIsVisible(!isVisible)}>
+                <button className="delete_btn btn"  onClick={()=> setShowModal(!showModal)}>
                 <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M1.167 12.448c0 .854.7 1.552 1.555 1.552h6.222c.856 0 1.556-.698 1.556-1.552V3.5H1.167v8.948Zm10.5-11.281H8.75L7.773 0h-3.88l-.976 1.167H0v1.166h11.667V1.167Z" fill="#ED6368"/></svg>
                 delete
               </button>
@@ -59,7 +63,7 @@ function Comment({comment, user, addReply}) {
     
 
     <div className="replies_container">
-      {comment.replies && <Replies user={user} replies={comment.replies}/>}
+      {comment.replies && <Replies commentId={comment.id} user={user} replies={comment.replies} removeComment={ removeComment }/>}
       
     </div>
 

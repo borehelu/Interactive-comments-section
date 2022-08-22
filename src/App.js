@@ -4,11 +4,12 @@ import data from './data/data.json';
 import NewComment from './components/NewComment';
 
 
+
 function App() {
   const [comments,setComments] = useState(data.comments);
-  
-
   const user = data.currentUser;
+
+  // console.log(`There are ${comments.length} comments, and ${comments[1].replies.length} replies in second comment`);
 
   function addComment(comment){
 
@@ -28,10 +29,32 @@ function App() {
 
     setComments(newComments);
   }
+
+  function removeComment(commentId,replyId = null,isReply){
+    let newComments = [];
+    if(!isReply){
+      newComments = comments.filter(comment => comment.id !== commentId);
+
+    }else{
+      newComments = comments.map(comment => {
+        if(comment.id === commentId){
+         let replies = comment.replies.filter(reply => reply.id !== replyId);
+         comment.replies = replies;
+        }
+        return comment;
+      });
+    }
+
+    
+
+    setComments(newComments);
+
+  }
   
   return (
    <main>
-     <Comments comments={ comments } user={ user } addReply={ addReply } /> 
+     
+     <Comments comments={ comments } user={ user } addReply={ addReply } removeComment={ removeComment }/> 
      <NewComment user={ user } addComment={ addComment } />
     </main>
   );
