@@ -5,11 +5,15 @@ function NewComment({user,addComment}) {
   const [comment, setComment] = useState("");
 
   const handleClick = () =>{
-    let id = uuidv4();
-    let date = new Date();
-    let newComment = {id:id,content:comment,createdAt:date.toDateString(),score:0,user:user};
+    if(comment.length > 0){
+      let id = uuidv4();
+      let date = new Date();
+      let newComment = {id:id,content:comment,createdAt:date.toDateString(),score:0,user:user};
 
-    addComment(newComment);
+      addComment(newComment);
+
+    }
+    
   }
 
 
