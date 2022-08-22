@@ -116,21 +116,27 @@ button{
   color: var(--grayish-blue);
 }
 
-.reply_btn{
+.btn{
   text-transform: capitalize;
   color: var(--moderate-blue);
   font-weight: 700;
   font-size: 17px;
   display: flex;
   justify-content: center;
-  align-items: center;
   column-gap: .5rem;
 
 }
 
-.reply_btn:hover{
+
+
+.btn:hover{
   opacity: .6;
 }
+
+.delete_btn{
+  color: var(--soft-red);
+}
+
 
 .new-comment{
   justify-content: space-between;
@@ -147,6 +153,12 @@ button{
   border-radius: 8px;
   border: 1px solid var(--grayish-blue);
   padding: .8rem 1rem;
+  color: var(--dark-blue);
+  font-size: .9rem;
+}
+
+.new-comment textarea:focus{
+  outline: 1px solid var(--moderate-blue);
 }
 
 .new-comment button.primary{
@@ -176,4 +188,18 @@ button{
 .comment__text span{
   font-weight: 700;
   color: var(--moderate-blue);
+}
+
+.pill{
+  all: unset;
+  padding: .1rem .3rem;
+  border-radius: .2rem;
+  font-weight: 700;
+  background-color: var(--moderate-blue);
+  color: var(--white);
+}
+
+.flex{
+  display: flex;
+  column-gap: 1.5rem;
 }
