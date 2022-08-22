@@ -6,6 +6,7 @@ import NewComment from './components/NewComment';
 
 function App() {
   const [comments,setComments] = useState(data.comments);
+  
 
   const user = data.currentUser;
 
