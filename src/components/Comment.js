@@ -63,7 +63,7 @@ function Comment({comment, user, addReply,removeComment}) {
     
 
     <div className="replies_container">
-      {comment.replies && <Replies commentId={comment.id} user={user} replies={comment.replies} removeComment={ removeComment }/>}
+      {comment.replies && <Replies addReply={addReply}commentId={comment.id} user={user} replies={comment.replies} removeComment={ removeComment }/>}
       
     </div>
 

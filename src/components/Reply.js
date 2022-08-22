@@ -56,7 +56,7 @@ function Reply({reply,user,addReply,removeComment,commentId}) {
           </div>
         </div>
         {
-         isVisible && <NewReply user = {user} replyingTo= {reply.user.username} commentId = {reply.id} addReply={addReply} setIsVisible={setIsVisible}/>
+         isVisible && <NewReply user = {user} replyingTo= {reply.user.username} commentId = {commentId} addReply={addReply} setIsVisible={setIsVisible}/>
         }
     
         </div>

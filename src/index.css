@@ -51,11 +51,12 @@ main{
 
 .comment{
   background-color: var(--white);
-  border-radius: 1rem;
+  border-radius: .7rem;
   padding: 1.5rem;
-  max-width: 868px;
+  max-width: 768px;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   column-gap: 2rem;
   margin-bottom: 1rem;
 }
@@ -69,19 +70,25 @@ button{
 
 .comment__score{
   background-color: var(--very-light-gray);
-  padding: 1rem;
+  width: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: .5rem 0;
   border-radius: 8px;
-  row-gap: 1rem;
+  row-gap: .1rem;
+  
 }
 
 
 .comment__score .score{
   color: var(--moderate-blue);
   font-weight: 700;
+}
+
+.score__btn:hover svg path{
+  fill: var(--moderate-blue);
 }
 
 .comment__details{
@@ -181,7 +188,7 @@ button{
 
 .replies_container{
   width: 96%;
-  border-left: 1px solid var(--light-gray);
+  border-left: 1px dotted var(--dark-blue);
   margin-left: auto;
   padding-left: 2rem;
 }
