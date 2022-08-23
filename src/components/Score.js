@@ -7,7 +7,6 @@ function Score({score, upVote, downVote, commentId,isReply,replyId}){
     function handleUpvote(){
       setUpPressed(true);
       setDownPressed(false);
-      console.log(commentId,replyId,isReply);
       upVote(commentId,replyId,isReply);
   
     }
