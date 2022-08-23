@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/borehelu/Interactive-comments-section/static/css/main.ca22f9e8.css",
-    "main.js": "/borehelu/Interactive-comments-section/static/js/main.65bdae8f.js",
-    "index.html": "/borehelu/Interactive-comments-section/index.html",
-    "main.ca22f9e8.css.map": "/borehelu/Interactive-comments-section/static/css/main.ca22f9e8.css.map",
-    "main.65bdae8f.js.map": "/borehelu/Interactive-comments-section/static/js/main.65bdae8f.js.map"
+    "main.css": "/Interactive-comments-section/static/css/main.ca22f9e8.css",
+    "main.js": "/Interactive-comments-section/static/js/main.65bdae8f.js",
+    "index.html": "/Interactive-comments-section/index.html",
+    "main.ca22f9e8.css.map": "/Interactive-comments-section/static/css/main.ca22f9e8.css.map",
+    "main.65bdae8f.js.map": "/Interactive-comments-section/static/js/main.65bdae8f.js.map"
   },
   "entrypoints": [
     "static/css/main.ca22f9e8.css",
