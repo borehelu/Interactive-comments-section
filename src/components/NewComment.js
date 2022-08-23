@@ -11,6 +11,7 @@ function NewComment({user,addComment}) {
       let newComment = {id:id,content:comment,createdAt:date.toDateString(),score:0,user:user};
 
       addComment(newComment);
+      setComment("");
 
     }
     

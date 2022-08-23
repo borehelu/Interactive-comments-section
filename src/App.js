@@ -50,11 +50,74 @@ function App() {
     setComments(newComments);
 
   }
+
+  function upVote(commentId,replyId = null,isReply){
+    let newComments = [];
+    if(!isReply){
+      newComments = comments.map(comment => {
+        if(comment.id === commentId){
+          comment.score += 1;
+        }
+        return comment;
+      })
+
+    }else{
+      newComments = comments.map(comment => {
+        if(comment.id === commentId){
+         comment.replies.map(reply => {
+          if(reply.id === replyId){
+            reply.score += 1;
+          }
+         }
+         )
+        }
+
+        return comment;
+        
+      });
+    }
+    
+
+    setComments(newComments);
+
+  }
+
+  function downVote(commentId,replyId = null,isReply){
+    let newComments = [];
+    if(!isReply){
+      newComments = comments.map(comment => {
+        if(comment.id === commentId){
+          comment.score -= 1;
+        }
+        return comment;
+      })
+
+    }else{
+      newComments = comments.map(comment => {
+        if(comment.id === commentId){
+         comment.replies.map(reply => {
+          if(reply.id === replyId){
+            reply.score -= 1;
+          }
+         }
+         )
+        }
+
+        return comment;
+        
+      });
+    }
+
+    
+
+    setComments(newComments);
+
+  }
   
   return (
    <main>
      
-     <Comments comments={ comments } user={ user } addReply={ addReply } removeComment={ removeComment }/> 
+     <Comments comments={ comments } user={ user } addReply={ addReply } removeComment={ removeComment } upVote={upVote} downVote={downVote}/> 
      <NewComment user={ user } addComment={ addComment } />
     </main>
   );
