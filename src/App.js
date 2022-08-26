@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Comments from './components/Comments';
 import data from './data/data.json';
 import NewComment from './components/NewComment';
+import { CommentsContext } from './context/commentsContext';
 
 
 
@@ -115,11 +116,12 @@ function App() {
   }
   
   return (
-   <main>
-     
-     <Comments comments={ comments } user={ user } addReply={ addReply } removeComment={ removeComment } upVote={upVote} downVote={downVote}/> 
-     <NewComment user={ user } addComment={ addComment } />
-    </main>
+    <CommentsContext.Provider value={{comments,user,addReply,addComment,removeComment,upVote,downVote}}>
+      <main>
+        <Comments /> 
+        <NewComment />
+      </main>
+    </CommentsContext.Provider>
   );
 }
 

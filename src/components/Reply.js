@@ -1,17 +1,19 @@
-import React,{useState} from 'react';
+import React,{ useState, useContext} from 'react';
 import NewReply from './NewReply';
 import DeleteModal from './DeleteModal';
 import Score from './Score';
+import { CommentsContext } from '../context/commentsContext';
 
-function Reply({reply,user,upVote, downVote,addReply,removeComment,commentId}) {
+function Reply({reply,commentId}) {
     const [isVisible,setIsVisible] = useState(false);
     const [showModal,setShowModal] = useState(false);
+    const {  user } = useContext(CommentsContext);
   
     return (
         <div>
-         <DeleteModal showModal={showModal} setShowModal={setShowModal} commentId={ commentId} replyId={reply.id} isReply={true} removeComment={ removeComment }/>
+         <DeleteModal showModal={showModal} setShowModal={setShowModal} commentId={ commentId} replyId={reply.id} isReply={true} />
         <div className="comment" >
-        <Score score={reply.score} upVote={upVote} downVote={downVote} commentId={ commentId} isReply={true} replyId={reply.id}/>
+        <Score score={reply.score}  commentId={ commentId} isReply={true} replyId={reply.id}/>
           <div className="comment__details">
             <div className="comment__heading">
               <div className="user_details">
@@ -48,7 +50,7 @@ function Reply({reply,user,upVote, downVote,addReply,removeComment,commentId}) {
           </div>
         </div>
         {
-         isVisible && <NewReply user = {user} replyingTo= {reply.user.username} commentId = {commentId} addReply={addReply} setIsVisible={setIsVisible}/>
+         isVisible && <NewReply  replyingTo= {reply.user.username} commentId = {commentId}  setIsVisible={setIsVisible}/>
         }
     
         </div>

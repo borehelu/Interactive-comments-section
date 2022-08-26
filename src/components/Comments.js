@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CommentsContext } from '../context/commentsContext';
 import Comment from './Comment';
 
-function Comments({comments,user,addReply, removeComment, downVote, upVote}) {
-
-    const commentsJSX = comments.map(comment => <Comment user={user} key={comment.id} comment={comment} addReply={addReply} removeComment={ removeComment } upVote={upVote} downVote={downVote}/>)
+function Comments() {
+    const { comments } = useContext(CommentsContext);
     
-    return commentsJSX;
+    return (
+        comments.map(comment => <Comment  key={comment.id} comment={comment}  />)
+    );
 }
 
 export default Comments
