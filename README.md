@@ -14,9 +14,9 @@ This is a solution to the [Interactive comments section challenge on Frontend Me
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
     - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
+    
   - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
+  
 
 
 ## Overview
@@ -34,13 +34,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot-1.png)
 
 
 ### Links
 
 - Solution URL: [Solution url](https://www.frontendmentor.io/solutions/interactive-comment-section-8QA-s5hwCt)
-- Live Site URL: [Live site]([https://your-live-site-url.com](https://borehelu.github.io/Interactive-comments-section/))
+- Live Site URL: [Live site](https://borehelu.github.io/Interactive-comments-section/)
 
 ## My process
 
