@@ -159,7 +159,7 @@ button{
   height: auto;
 }
 
-.new-comment textarea{
+.new-comment textarea, .edit-comment textarea{
   width: 100%;
   border-radius: 8px;
   border: 1px solid var(--grayish-blue);
@@ -168,11 +168,11 @@ button{
   font-size: .9rem;
 }
 
-.new-comment textarea:focus{
+.new-comment textarea:focus, .edit-comment textarea{
   outline: 1px solid var(--moderate-blue);
 }
 
-.new-comment button.primary{
+.new-comment button.primary, .edit-comment button.primary{
   background-color: var(--moderate-blue);
   color: var(--white);
   text-transform: uppercase;
@@ -185,8 +185,18 @@ button{
   
 }
 
-.new-comment button.primary:hover{
+.new-comment button.primary:hover, .edit-comment button.primary:hover{
   opacity: .6;
+}
+
+.edit-comment{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.edit-comment button{
+  align-self: flex-end;
 }
 
 .replies_container{
