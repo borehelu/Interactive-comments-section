@@ -114,9 +114,40 @@ function App() {
     setComments(newComments);
 
   }
+
+  function editComment(commentId,content){
+    let newComments= [];
+
+    newComments = comments.map(comment => {
+      if(comment.id === commentId){
+        comment.content = content;
+      }
+      return comment;
+    })
+
+    setComments(newComments);
+  }
+
+  function editReply(commentId,replyId,content){
+    let newComments= [];
+
+    newComments = comments.map(comment => {
+      if(comment.id === commentId){
+        comment.replies.forEach(reply => {
+          if(reply.id === replyId){
+            reply.content = content;
+          }
+          
+        });
+      }
+      return comment;
+    })
+
+    setComments(newComments);
+  }
   
   return (
-    <CommentsContext.Provider value={{comments,user,addReply,addComment,removeComment,upVote,downVote}}>
+    <CommentsContext.Provider value={{ comments, user, addReply, addComment, removeComment, upVote, downVote, editComment, editReply}}>
       <main>
         <Comments /> 
         <NewComment />
