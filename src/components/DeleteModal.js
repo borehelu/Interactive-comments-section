@@ -1,10 +1,11 @@
-import React,{ useState, useContext } from 'react';
+import React,{ useContext } from 'react';
 import { CommentsContext } from '../context/commentsContext';
 
 
 function DeleteModal({ showModal,setShowModal,commentId,replyId,isReply }) {
 
-    const { removeComment } = useContext(CommentsContext)
+    const { removeComment } = useContext(CommentsContext);
+
     function handleClose(){
         setShowModal(!showModal);
     }
@@ -29,4 +30,4 @@ function DeleteModal({ showModal,setShowModal,commentId,replyId,isReply }) {
   )
 }
 
-export default DeleteModal
+export default DeleteModal;

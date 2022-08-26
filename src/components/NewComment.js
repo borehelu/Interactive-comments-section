@@ -29,4 +29,4 @@ function NewComment() {
   );
 }
 
-export default NewComment
+export default NewComment;
