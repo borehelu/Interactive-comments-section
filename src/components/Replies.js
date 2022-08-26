@@ -7,4 +7,4 @@ function Replies({ commentId, replies }) {
   
 }
 
-export default Replies
+export default Replies;
