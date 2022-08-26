@@ -1,8 +1,10 @@
-import React,{useState} from 'react';
+import React,{ useState, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { CommentsContext } from '../context/commentsContext';
 
-function NewComment({user,addComment}) {
+function NewComment() {
   const [comment, setComment] = useState("");
+  const {user,addComment} = useContext(CommentsContext);
 
   const handleClick = () =>{
     if(comment.length > 0){

@@ -1,8 +1,10 @@
-import React,{ useState } from 'react'
+import React,{ useState,useContext } from 'react';
+import { CommentsContext } from '../context/commentsContext';
 
-function Score({score, upVote, downVote, commentId,isReply,replyId}){
+function Score({score,  commentId,isReply,replyId}){
     const [upPressed,setUpPressed] = useState(false);
     const [downPressed,setDownPressed] = useState(false);
+    const {upVote, downVote } = useContext(CommentsContext)
   
     function handleUpvote(){
       setUpPressed(true);

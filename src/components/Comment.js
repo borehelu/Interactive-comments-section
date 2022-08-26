@@ -1,22 +1,24 @@
-import React,{ useState } from 'react';
+import React,{ useState, useContext } from 'react';
 import NewReply from './NewReply';
 import Replies from './Replies';
 import DeleteModal from './DeleteModal';
 import Score from './Score';
+import { CommentsContext } from '../context/commentsContext';
 
 
 
 
-function Comment({comment, user, addReply,removeComment, upVote, downVote}) {
+function Comment({comment }) {
     const [isVisible,setIsVisible] = useState(false);
     const [showModal,setShowModal] = useState(false);
+    const { user, addReply,removeComment, upVote, downVote } = useContext(CommentsContext);
   
 
   return (
     <div>
     <DeleteModal showModal={showModal} setShowModal={setShowModal} commentId={ comment.id} isReply={false} removeComment={ removeComment }/>
     <div className="comment" >
-     <Score score={comment.score} upVote={upVote} downVote={downVote} commentId={ comment.id} isReply={false} replyId={null}/>
+     <Score score={comment.score}  commentId={ comment.id} isReply={false} replyId={null}/>
       <div className="comment__details">
         <div className="comment__heading">
           <div className="user_details">
@@ -51,13 +53,13 @@ function Comment({comment, user, addReply,removeComment, upVote, downVote}) {
       </div>
     </div> 
     {
-      isVisible && <NewReply user = {user} replyingTo= {comment.user.username} commentId = {comment.id} addReply={addReply} setIsVisible={setIsVisible}/>
+      isVisible && <NewReply replyingTo= {comment.user.username} commentId = {comment.id}  setIsVisible={setIsVisible}/>
     }
 
     
 
     <div className="replies_container">
-      {comment.replies && <Replies addReply={addReply}commentId={comment.id} user={user} replies={comment.replies} removeComment={ removeComment } upVote={upVote} downVote={downVote}/>}
+      {comment.replies && <Replies addReply={addReply} commentId={comment.id} user={user} replies={comment.replies} removeComment={ removeComment } upVote={upVote} downVote={downVote}/>}
       
     </div>
 

@@ -1,9 +1,11 @@
-import React,{useState} from 'react';
+import React,{ useState, useContext} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { CommentsContext } from '../context/commentsContext';
 
-function NewReply({user,replyingTo,addReply,commentId,setIsVisible}) {
+function NewReply({replyingTo,commentId,setIsVisible}) {
 
     const [comment, setComment] = useState(`@${replyingTo}, `);
+    const { user, addReply} = useContext(CommentsContext);
 
     const handleClick = () =>{
 
